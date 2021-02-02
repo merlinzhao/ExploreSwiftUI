@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import Combine
+// an observable object is a custom objects for data to be bound in a view that is stored in SwiftUI env
+final class ModelData: ObservableObject {
+    @Published var landmarks: [Landmark] = load("landmarkData.json") //observable object needs to publish data so subscribers can pick up change
+}
 
 // Array of landmarks
 var landmarks: [Landmark] = load("landmarkData.json")
